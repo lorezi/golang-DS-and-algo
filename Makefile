@@ -18,6 +18,16 @@ method:
 interface:
 	go run week-one/interface/main.go
 
+.PHONY: maps
+## maps: run maps.go file
+maps:
+	go run week-one/maps/main.go
+
+.PHONY: array-interview-questions
+## array-interview-questions: run array-interview-questions.go file
+array-interview-questions:
+	go run week-one/array-interview-questions/main.go
+
 
 .PHONY: help
 ## help: prints this help message
