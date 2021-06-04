@@ -8,6 +8,11 @@ range:
 function:
 	go run week-one/function/function.go
 
+.PHONY: method
+## method: run method.go file
+method:
+	go run week-one/method/main.go
+
 
 .PHONY: help
 ## help: prints this help message
