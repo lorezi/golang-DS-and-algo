@@ -28,6 +28,11 @@ maps:
 array-interview-questions:
 	go run week-one/array-interview-questions/main.go
 
+.PHONY: recursive
+## recursive: run recursive.go file
+recursive:
+	go run week-one/recursive/main.go
+
 
 .PHONY: help
 ## help: prints this help message
