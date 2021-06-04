@@ -48,10 +48,12 @@ func BinarySearch(list []int, val int) bool {
 
 /*
 
-RotateArray function rotates a list in k number of times
-Analysis: Rotating list is done in two parts trick. In the first part, we reverse elements of list first half and then second half
-*/
+RotateArray function rotates a list in k number of times.
 
+Analysis:
+- Rotating list is done in two parts trick. In the first part, we reverse elements of list first half and then second half.
+- Then we reverse the whole list, in order to complete the whole rotation
+*/
 func RotateArray(data []int, k int) {
 	size := len(data)
 	ReverseArray(data, 0, k-1)
@@ -72,8 +74,28 @@ func ReverseArray(data []int, start int, end int) {
 	}
 }
 
+// Find the largest sum contiguous subarray
+func MaxSubArraySum(data []int) int {
+
+	maxSoFar := 0
+	maxEndingHere := 0
+
+	for i := range data {
+		maxEndingHere = maxEndingHere + data[i]
+		if maxEndingHere < 0 {
+			maxEndingHere = 0
+		}
+		if maxSoFar < maxEndingHere {
+			maxSoFar = maxEndingHere
+		}
+	}
+
+	return maxSoFar
+}
+
 func main() {
 	data := []int{1, 4, 5, 3, 6, 9}
+	second_data := []int{1, 4, -5, 3, -9, 10, 11, -12, 6, 9}
 
 	sum := sumList(data)
 	fmt.Println("The sum of the list is: ", sum)
@@ -83,4 +105,6 @@ func main() {
 
 	b := BinarySearch(data, 9)
 	fmt.Println(b)
+
+	fmt.Println("Max sub array sum:", MaxSubArraySum(second_data))
 }
