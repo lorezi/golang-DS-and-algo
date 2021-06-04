@@ -58,5 +58,4 @@ func main() {
 	c := Circle{radius: 10}
 	fmt.Println("Total Area: ", TotalArea(r, c))
 	fmt.Println("Total Perimeter: ", TotalPerimeter(r, c))
-
 }
