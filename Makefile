@@ -13,6 +13,11 @@ function:
 method:
 	go run week-one/method/main.go
 
+.PHONY: interface
+## interface: run interface.go file
+interface:
+	go run week-one/interface/main.go
+
 
 .PHONY: help
 ## help: prints this help message
