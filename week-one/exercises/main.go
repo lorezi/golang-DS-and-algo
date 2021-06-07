@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 /*
 1. Find average of all the elements in a list
@@ -57,6 +60,21 @@ func MinNum(data [][]int) int {
 	return min
 }
 
+// A function to find the sum of every number in an int number.
+// Example: input=1984 ====> (1+9+8+4)
+func sum_of_every_number(num int) int {
+
+	str := strconv.Itoa(num)
+	sum := 0
+	for _, v := range str {
+		str := string(v)
+		n, _ := strconv.ParseInt(str, 10, 64)
+		sum += int(n)
+	}
+
+	return sum
+}
+
 func main() {
 	data := []int{2, 3, 5, 3, 6, 9, 2}
 	a := FindAverage(data)
@@ -72,5 +90,8 @@ func main() {
 
 	min := MinNum(two_dim)
 	fmt.Printf("The minimum number of the 2D array is %d\n", min)
+
+	input := sum_of_every_number(1984)
+	fmt.Println("The sum of the every number is ", input)
 
 }
