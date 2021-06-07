@@ -17,6 +17,6 @@ func FindAverage(data []int) float64 {
 func main() {
 	data := []int{2, 3, 5, 3, 6, 9, 2}
 	a := FindAverage(data)
-	fmt.Println("The average of the data list is ", a)
+	fmt.Printf("The average of the data list is %.2f ", a)
 
 }
