@@ -34,6 +34,12 @@ recursive:
 	go run week-one/recursive/main.go
 
 
+.PHONY: exercises
+## exercises: run main.go file
+exercises:
+	go run week-one/exercises/main.go
+
+
 .PHONY: help
 ## help: prints this help message
 help:
