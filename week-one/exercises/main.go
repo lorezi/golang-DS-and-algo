@@ -29,14 +29,31 @@ func Sum2DList(data [][]int) float64 {
 	return float64(sum) / float64(c)
 }
 
+func MaxNum(data [][]int) int {
+
+	max := 0
+	for _, r := range data {
+		for _, v := range r {
+			if v > max {
+				max = v
+			}
+		}
+	}
+
+	return max
+}
+
 func main() {
 	data := []int{2, 3, 5, 3, 6, 9, 2}
 	a := FindAverage(data)
 	fmt.Printf("The average of the data list is %.2f\n", a)
 
-	two_dim := [][]int{{1, 2, 34}, {1, 2, 34}}
+	two_dim := [][]int{{1, 2, 43}, {1, 2, 34}}
 	ans := Sum2DList(two_dim)
 
 	fmt.Printf("The sum of the 2D array is %.2f\n", ans)
+
+	m := MaxNum(two_dim)
+	fmt.Printf("The maximum number of the 2D array is %d\n", m)
 
 }
