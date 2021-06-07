@@ -105,6 +105,18 @@ func Fibonacci(n int) int {
 
 }
 
+// Binary search using recursion ===> Search a value in an increasing order sorted list of integers
+func BinarySearchRecursive(data []int, low int, high int, value int) int {
+	mid := low + (high-low)/2 // To a func the overflow
+	if data[mid] == value {
+		return mid
+	} else if data[mid] < value { // go right
+		return BinarySearchRecursive(data, mid+1, high, value)
+	} else { // go left
+		return BinarySearchRecursive(data, low, mid-1, value)
+	}
+}
+
 func main() {
 	data := []int{1, 4, 5, 3, 6, 9}
 	second_data := []int{1, 4, -5, 3, -9, 10, 11, -12, 6, 9}
