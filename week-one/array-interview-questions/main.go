@@ -93,6 +93,18 @@ func MaxSubArraySum(data []int) int {
 	return maxSoFar
 }
 
+// Fibonacci number is the sum of two previous fibonacci numbers
+func Fibonacci(n int) int {
+	// 1. break point
+	if n <= 1 {
+		return n
+	}
+
+	// 2. Body (recursive expansion)
+	return Fibonacci(n-1) + Fibonacci(n-2)
+
+}
+
 func main() {
 	data := []int{1, 4, 5, 3, 6, 9}
 	second_data := []int{1, 4, -5, 3, -9, 10, 11, -12, 6, 9}
@@ -107,4 +119,7 @@ func main() {
 	fmt.Println(b)
 
 	fmt.Println("Max sub array sum:", MaxSubArraySum(second_data))
+
+	f := Fibonacci(3)
+	fmt.Println("Fibonacci number of 3 is ", f)
 }
